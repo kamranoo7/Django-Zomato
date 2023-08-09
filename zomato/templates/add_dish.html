@@ -1,0 +1,17 @@
+<!-- zomato/templates/add_dish.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Dish</title>
+</head>
+<body>
+    <h1>Add a New Dish</h1>
+    <form method="post">
+        {% csrf_token %}
+        Dish Name: <input type="text" name="dish_name"><br>
+        Price: <input type="number" name="price"><br>
+        <input type="submit" value="Add Dish">
+    </form>
+</body>
+</html>

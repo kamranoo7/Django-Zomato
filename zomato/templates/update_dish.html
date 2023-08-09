@@ -1,0 +1,21 @@
+<!-- zomato/templates/update_availability.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Dish Availability and Price</title>
+</head>
+<body>
+    <h1>Update Dish Availability and Price</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="dish_id">Enter Dish ID:</label>
+        <input type="number" id="dish_id" name="dish_id" required><br>
+        <label for="available">Update Availability:</label>
+        <input type="checkbox" id="available" name="available"><br>
+        <label for="price">Update Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required><br>
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
