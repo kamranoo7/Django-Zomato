@@ -6,9 +6,12 @@
     }],
     "routes": [
         {
+            "src": "/static/(.*)",   
+            "dest": "/static/$1"
+        },
+        {
             "src": "/(.*)",
             "dest": "zomato/wsgi.py"
-
         }
     ]
 }
