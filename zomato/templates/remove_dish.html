@@ -1,17 +1,17 @@
 <!-- zomato/templates/remove_dish.html -->
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Remove Dish</title>
-</head>
-<body>
-    <h1>Remove Dish</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="dish_id">Enter Dish ID:</label>
-        <input type="number" id="dish_id" name="dish_id" required><br>
-        <input type="submit" value="Remove Dish">
-    </form>
-</body>
-</html>
+
+
+{% load static %}
+{% include 'navbar.html' %}
+{% block content %}
+<h1>Remove a Dish</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="dish_id">Dish ID:</label>
+    <input type="number" id="dish_id" name="dish_id" required><br>
+    <input type="submit" value="Remove Dish">
+</form>
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'remove_dish.css' %}">

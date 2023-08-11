@@ -1,0 +1,23 @@
+/* base.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+}
+
+nav ul{
+    display:  flex;
+align-items: center;
+justify-content: space-between;
+margin: auto;
+height: 80px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}

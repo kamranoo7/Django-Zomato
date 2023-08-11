@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+
+from django.conf.urls.static import static
 from .views import display_menu, add_dish,remove_dish,update_dish
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +27,8 @@ urlpatterns = [
     path('remove_dish/', remove_dish, name='remove_dish'),
     path('update_dish/', update_dish, name='update_dish'),
 ]
+
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

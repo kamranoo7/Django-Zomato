@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'update_dish' %}">Update Dish</a></li>
+            <li><a href="{% url 'add_dish' %}">Add Dish</a></li>
+            <li><a href="{% url 'remove_dish' %}">Remove Dish</a></li>
+            
+        </ul>
+    </nav>
+</body>
+</html>

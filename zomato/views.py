@@ -17,25 +17,37 @@ def add_dish(request):
 
 
 
+# views.py
+
+# ... your existing imports ...
+
+# views.py
+
+# ... your existing imports ...
+
 def add_dish(request):
     if request.method == 'POST':
-        dish_name = request.POST.get('dish_name')
-        price = float(request.POST.get('price'))
-        
-        # Generate a new dish ID (for demonstration purposes)
-        new_dish_id = max(get_menu().keys()) + 1
-        
-        new_dish = {
+        dish_name = request.POST['dish_name']
+        price = float(request.POST['price'])
+        available = 'available' in request.POST
+        description = request.POST['description']
+
+        # Get the menu data from the function and calculate the next dish_id
+        menu_data = get_menu()  # Call the function to get the menu data
+        dish_id = len(menu_data) + 1
+
+        # Save the new dish to the menu data
+        menu_data[dish_id] = {
             'name': dish_name,
             'price': price,
-            'available': True  # Assume new dishes are available by default
+            'available': available,
+            'description': description
         }
-        
-        get_menu()[new_dish_id] = new_dish
-        
-        return redirect('menu')
-    
+        return redirect('menu')  # Redirect to the menu page
+
     return render(request, 'add_dish.html')
+
+
 #DElete
 
 
